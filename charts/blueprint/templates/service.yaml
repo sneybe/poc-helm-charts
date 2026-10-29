@@ -1,0 +1,23 @@
+{{- range $name, $workload := .Values.workloads }}
+
+{{- if $workload.service.enabled }}
+
+---
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: {{ $name }}-service
+
+spec:
+  selector:
+    app: {{ $name }}
+
+  ports:
+    - protocol: TCP
+      port: {{ $workload.service.port }}
+      targetPort: {{ $workload.service.targetPort }}
+
+{{- end }}
+
+{{- end }}

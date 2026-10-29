@@ -1,0 +1,5 @@
+apiVersion: v2
+name: blueprint
+description: Blueprint Kubernetes générique pour le POC ARTM
+type: application
+version: 0.1.0

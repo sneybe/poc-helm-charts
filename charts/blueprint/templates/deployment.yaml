@@ -1,0 +1,33 @@
+{{- range $name, $workload := .Values.workloads }}
+
+---
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: {{ $name }}
+
+spec:
+  replicas: {{ $workload.replicas }}
+
+  selector:
+    matchLabels:
+      app: {{ $name }}
+
+  template:
+    metadata:
+      labels:
+        app: {{ $name }}
+
+    spec:
+      containers:
+        - name: {{ $name }}
+
+          image: "{{ $workload.image.repository }}:{{ $workload.image.tag }}"
+
+          imagePullPolicy: {{ $workload.image.pullPolicy }}
+
+          ports:
+            - containerPort: {{ $workload.service.targetPort }}
+
+{{- end }}
