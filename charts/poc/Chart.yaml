@@ -1,0 +1,11 @@
+apiVersion: v2
+name: poc
+description: Helm chart applicatif du POC ARTM
+type: application
+version: 0.1.0
+appVersion: "0.3.0"
+
+dependencies:
+  - name: blueprint
+    version: 0.1.0
+    repository: "file://../blueprint"

@@ -1,0 +1,6 @@
+dependencies:
+- name: blueprint
+  repository: file://../blueprint
+  version: 0.1.0
+digest: sha256:1707b4e17351255103c4aa69e6833b13660d747d683f2aac35004166f50a5901
+generated: "2026-10-30T16:20:27.203625019-04:00"

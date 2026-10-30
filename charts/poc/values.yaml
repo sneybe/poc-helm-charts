@@ -1,0 +1,19 @@
+blueprint:
+  workloads:
+    poc-api:
+      replicas: 1
+
+      image:
+        repository: sambasy/poc-api
+        tag: "0.3.0"
+        pullPolicy: IfNotPresent
+
+      service:
+        enabled: true
+        port: 80
+        targetPort: 8080
+
+      ingress:
+        enabled: true
+        host: poc-api.local
+        path: /
